@@ -40,7 +40,7 @@ jobs:
       - name: Run mutation testing
         run: |
             dotnet tool install --global dotnet-stryker
-            dotnet stryker ${{ env.PROJECT_PATH }} 
+            dotnet stryker 
       
       - name: Build app 
         run: dotnet build ${{ env.PROJECT_PATH }}
