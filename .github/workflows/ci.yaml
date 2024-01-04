@@ -36,11 +36,13 @@ jobs:
       
       - name: Execute unit tests
         run: dotnet test ${{ env.PROJECT_PATH }}
-
+        
+      - name: Build app 
+        run: dotnet build ${{ env.PROJECT_PATH }}
+        
       - name: Run mutation testing
         run: |
             dotnet tool install --global dotnet-stryker
             dotnet stryker 
       
-      - name: Build app 
-        run: dotnet build ${{ env.PROJECT_PATH }}
+     
