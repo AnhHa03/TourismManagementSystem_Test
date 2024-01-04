@@ -3,7 +3,7 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - branch_Test
+      - main
 
 env: 
     PROJECT_PATH: TourismManagementSystem/TourismManagementSystem.csproj
