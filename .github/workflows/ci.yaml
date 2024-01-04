@@ -38,7 +38,9 @@ jobs:
         run: dotnet test ${{ env.PROJECT_PATH }}
         
       - name: Build app 
-        run: dotnet build ${{ env.PROJECT_PATH }}
+        run: |
+            dotnet restore 
+            dotnet build ${{ env.PROJECT_PATH }}
         
       - name: Run mutation testing
         run: |
