@@ -39,8 +39,10 @@ jobs:
 
       - name: Run mutation testing
         run: |
-            dotnet tool restore ${{ env.PROJECT_PATH }}
-            dotnet stryker ${{ env.PROJECT_PATH }}
+            dotnet tool install -g dotnet-stryker
+            dotnet new tool-manifest
+            dotnet tool restore 
+            dotnet stryker 
       
       - name: Build app 
         run: dotnet build ${{ env.PROJECT_PATH }}
